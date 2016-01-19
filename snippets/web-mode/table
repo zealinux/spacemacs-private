@@ -1,0 +1,18 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: table
+# group: html
+# key: table
+# binding: direct-keybinding
+# --
+<table class="table">
+  <thead>
+    <tr>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+    </tr>
+  </tbody>
+</table>

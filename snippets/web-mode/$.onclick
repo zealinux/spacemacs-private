@@ -1,0 +1,10 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: $.onclick
+# group: jquery
+# key: $.onclick
+# binding: direct-keybinding
+# --
+$("$1").on('click', function(e) {
+  e.preventDefault();
+  $2
+});

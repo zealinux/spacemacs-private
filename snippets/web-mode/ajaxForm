@@ -1,0 +1,16 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ajaxForm
+# key: ajaxForm
+# binding: direct-keybinding
+# --
+$form.ajaxForm({
+  dataType: 'json',
+  success: function(data){
+    if (data.${1:succ}) {
+      $2
+    } else {
+      $3
+      $form.resetForm();
+    }
+  }
+});

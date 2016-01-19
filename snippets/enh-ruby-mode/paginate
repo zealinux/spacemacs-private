@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: paginate
+# key: paginate
+# binding: direct-keybinding
+# --
+paginate(page: params[:page], per_page: ${1:20})

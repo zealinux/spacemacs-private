@@ -1,0 +1,9 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: if.redis
+# key: if.redis
+# binding: direct-keybinding
+# --
+if ${1:redis2}.ttl(key) == -1
+  $1.expire key, ${2:2.day}
+end
+$0

@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: add_index
+# key: add_index
+# binding: direct-keybinding
+# --
+add_index :${1:tbl_name}, :${2:index_name},${3:unique: true,} name: '$4'

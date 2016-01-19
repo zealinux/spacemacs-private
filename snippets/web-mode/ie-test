@@ -1,0 +1,7 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ie-test
+# group: javascript
+# key: ie-test
+# binding: direct-keybinding
+# --
+/MSIE/.test(navigator.userAgent)

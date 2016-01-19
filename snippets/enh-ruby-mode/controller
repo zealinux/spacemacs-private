@@ -1,0 +1,91 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: controller
+# key: controller
+# binding: direct-keybinding
+# --
+# -*- encoding : utf-8 -*-
+class ${1:$(s-upper-camel-case yas-text)}sController < ApplicationController
+  before_filter :find_record, only: [:show, :edit, :update, :destroy]
+
+  # GET /$1s
+  # GET /$1s.json
+  def index
+    @$1s = ${1:$(s-upper-camel-case yas-text)}.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @$1s }
+    end
+  end
+
+  # GET /$1s/1
+  # GET /$1s/1.json
+  def show
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @$1 }
+    end
+  end
+
+  # GET /$1s/new
+  # GET /$1s/new.json
+  def new
+    @$1 = $1.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @$1 }
+    end
+  end
+
+  # GET /$1s/1/edit
+  def edit
+  end
+
+  # POST /$1s
+  # POST /$1s.json
+  def create
+    @$1 = $1.new(params[:$1])
+
+    respond_to do |format|
+      if @$1.save
+        format.html { redirect_to @$1, notice: '$1 was successfully created.' }
+        format.json { render json: @$1, status: :created, location: @$1 }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @$1.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PUT /$1s/1
+  # PUT /$1s/1.json
+  def update
+    respond_to do |format|
+      if @$1.update_attributes(params[:$1])
+        format.html { redirect_to @$1, notice: '$1 was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @$1.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /$1s/1
+  # DELETE /$1s/1.json
+  def destroy
+    @$1.destroy
+
+    respond_to do |format|
+      format.html { redirect_to $1s_url }
+      format.json { head :no_content }
+    end
+  end
+
+  protected
+
+  def find_record
+    @$1 = ${1:$(s-upper-camel-case yas-text)}.find(params[:id])
+  end
+end

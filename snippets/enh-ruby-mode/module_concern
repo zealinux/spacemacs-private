@@ -1,0 +1,22 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: module_concern
+# key: module_c
+# group: rails
+# binding: direct-keybinding
+# --
+# -*- encoding : utf-8 -*-
+module ${1: Foo}
+  extend ActiveSupport::Concern
+
+  included do
+    ${2:has_one}
+  end
+
+  module InstanceMethods
+    $3
+  end
+
+  module ClassMethods
+    $4
+  end
+end

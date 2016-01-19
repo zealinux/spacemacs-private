@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: t.column
+# key: t.column
+# binding: direct-keybinding
+# --
+t.column :${1:name}, :${2:$$(yas-choose-value '("string" "integer" "text" "boolean" "date"))}, limit: ${3:20}, ${4:null: false, }${5:default: '$6'}

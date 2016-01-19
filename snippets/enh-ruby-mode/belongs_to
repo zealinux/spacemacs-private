@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: belongs_to
+# key: belongs_to
+# binding: direct-keybinding
+# --
+belongs_to :$1${2:, foreign_key: :$3, class_name: '$4'}

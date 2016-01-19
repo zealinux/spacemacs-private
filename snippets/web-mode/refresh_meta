@@ -1,0 +1,7 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: refresh_meta
+# group: rails
+# key: refresh_meta
+# binding: direct-keybinding
+# --
+<meta http-equiv="refresh" content="${1:5}; url=$2" />$0

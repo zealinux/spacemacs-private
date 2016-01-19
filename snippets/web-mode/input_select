@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : input_select
+#key : input_select
+#contributor : Wang King
+# --
+<%= f.input :status, label: '状态', as: :select, selected: params[:status], collection: $1::STATUS_HASH.invert %>
+$0

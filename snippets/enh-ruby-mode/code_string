@@ -1,0 +1,10 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: code_string
+# key: code_string
+# binding: direct-keybinding
+# --
+code = <<-END.gsub(/^\s+\|/, '')
+  |def ${1:method}
+  |  $2
+  |end
+END

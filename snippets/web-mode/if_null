@@ -1,0 +1,9 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: if_null
+# group: javascript
+# key: if_null
+# binding: direct-keybinding
+# --
+if ($1 !== null && $1.length !== 0) {
+  $2
+}

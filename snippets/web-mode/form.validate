@@ -1,0 +1,26 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: form.validate
+# group: jquery
+# key: validate
+# binding: direct-keybinding
+# --
+$1.validate({
+    rules: {
+        "$2[name]": {
+            required: true,
+            maxlength: 10
+        },
+        "$2[picture]": {
+            required: true,
+            accept: "jpg|jpeg|png|bmp",
+            filesize: 200 * 1024
+        }
+    },
+    messages: {
+        "$2[name]": {
+            required: "不能为空",
+            maxlength: "太长超过10个字"
+        },
+        "$2[picture]": "表情应为正确格式，且小于200KB"
+    }
+});

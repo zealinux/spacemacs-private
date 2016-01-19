@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: fetch.cache
+# key: fetch
+# binding: direct-keybinding
+# --
+Rails.cache.fetch("#{$1}", expires_in: ${2:1.day}) do
+  $3
+end

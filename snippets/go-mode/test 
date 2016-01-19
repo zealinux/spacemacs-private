@@ -1,0 +1,17 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: test 
+# key: test
+# binding: direct-keybinding
+# --
+package ${1:packageName}
+
+import (
+  "testing"
+)
+
+func Test${2:FuncName}(t *testing.T) {
+  t.Error("Error!")
+  t.Log("Loging!")
+}
+
+// file_name: (func_name)_test.go

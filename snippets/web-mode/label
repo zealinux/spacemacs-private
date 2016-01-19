@@ -1,0 +1,7 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: label
+# group: rails
+# key: label
+# binding: direct-keybinding
+# --
+label: '$1'

@@ -1,0 +1,25 @@
+# -*- mode: snippet -*-
+#name : meet_note
+#key : meet_note
+#contributor : Wang King
+# --
+* 后端会议记录 `(let ((x (org-insert-time-stamp (current-time)))))` 
+`(format-time-string "<%Y-%m-%d>" (current-time))`
+主讲人：$1
+与会者：后端人员
+时间：ClockIn -- ClockOut
+$2
+** 议题：
+1. 
+2. 
+3. 
+
+** 主讲人分享:
+*** Key Points
+*** 参考
+*** Q&A
+** 检阅 newrelic/db slowlog
+** 讨论了几个问题：
+** 达成事项
+** 会后行动 [/]
+- [ ] 推动 xxx

@@ -1,0 +1,15 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: v1api
+# key: v1api
+# binding: direct-keybinding
+# --
+# -*- encoding : utf-8 -*-
+module V1
+  class $1 < Grape::API
+    version "v1"
+
+    get "$2" do
+      present :$3, @$3, with: Entities::FaceFormat
+    end
+  end
+end

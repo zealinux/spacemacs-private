@@ -1,0 +1,7 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: f.input
+# group: rails; momo
+# key: f.input
+# binding: direct-keybinding
+# --
+f.input :$1,${2:as: :hidden,} input_html: { value: "$2" }

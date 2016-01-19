@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: format.json
+# key: format.json
+# binding: direct-keybinding
+# --
+format.json { render json: $1.to_json }

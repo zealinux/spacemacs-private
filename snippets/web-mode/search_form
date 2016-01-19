@@ -1,0 +1,16 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: search_form
+# group: momo
+# key: search_form
+# binding: direct-keybinding
+# --
+<%=  form_tag "/admin/$1", { method: :get } do %>
+  <div class="controller-group form-line">
+    <label for="search_begin">日期：</label>
+    <%= datepicker_for do %>
+      <%= text_field_tag '${2:stat_date}', @$2, size: 20 %>
+    <% end %>
+    <%= submit_tag '查看', class: 'btn btn-primary' %>
+  </div>
+<% end %>
+$0

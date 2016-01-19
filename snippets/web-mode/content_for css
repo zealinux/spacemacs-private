@@ -1,0 +1,11 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: content_for css
+# group: rails
+# key: content_for_css
+# binding: direct-keybinding
+# --
+<% content_for :stylesheets do %>
+  <style type="text/css">
+    $1
+  </style>
+<% end %>

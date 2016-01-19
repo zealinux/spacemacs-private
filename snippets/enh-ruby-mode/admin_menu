@@ -1,0 +1,19 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: admin_menu
+# key: admin_menu
+# group: momo
+# binding: direct-keybinding
+# --
+<% content_for :title, "$1" %>
+
+<div role="tabpanel">
+  <!-- Nav tabs -->
+  <%= render '$2' %>
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">
+      <h2>$3</h2>
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>

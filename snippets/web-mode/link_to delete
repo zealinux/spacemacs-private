@@ -1,0 +1,7 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: link_to delete
+# group: rails
+# key: link_to-d
+# binding: direct-keybinding
+# --
+link_to '删除', [:admin, ${1:post}], method: :delete, confirm: '确定删除？'

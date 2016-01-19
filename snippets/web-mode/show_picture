@@ -1,0 +1,15 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: show_picture
+# group: momo
+# key: show_picture
+# binding: direct-keybinding
+# --
+<% if params[:action] == 'edit' && $1.picture? %>
+  <div class="control-group">
+    <%= f.label '（原图片）' %>
+    <div class="controls">
+      <%= image_tag $1.picture.url %>
+    </div>
+  </div>
+<% end %>
+$0

@@ -1,0 +1,13 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: try_catch
+# group: javascript
+# key: try
+# binding: direct-keybinding
+# --
+try {
+  $1
+}
+catch(error) {
+  ${2:console.log(error.message);}
+}
+$0

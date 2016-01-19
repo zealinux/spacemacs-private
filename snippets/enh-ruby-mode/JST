@@ -1,0 +1,7 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: JST
+# key: JST
+# binding: direct-keybinding
+# --
+JST['${1:templates/water_army}']({ ${2:name: data.name, id: data.id} });
+$0

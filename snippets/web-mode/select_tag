@@ -1,0 +1,7 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: select_tag
+# group: rails
+# key: select_tag
+# binding: direct-keybinding
+# --
+select_tag '$1', options_for_select(${2:NAME_HASH}.collect { |k, v| [v, k] }, ${3:default_value})${4:, include_blank: true, prompt: '不限'}

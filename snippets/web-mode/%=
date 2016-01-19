@@ -1,0 +1,7 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: %=
+# group: base
+# key: %=
+# binding: direct-keybinding
+# --
+<%= $1 %>

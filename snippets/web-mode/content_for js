@@ -1,0 +1,13 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: content_for js
+# group: rails
+# key: content_for_js
+# binding: direct-keybinding
+# --
+<% content_for :javascripts do %>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $1
+    })
+  </script>
+<% end %>

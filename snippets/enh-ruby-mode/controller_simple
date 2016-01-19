@@ -1,0 +1,51 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: controller_simple
+# key: controller_simple
+# binding: direct-keybinding
+# --
+class ${1:$(s-upper-camel-case yas-text)}sController < ApplicationController
+  before_filter :find_record, only: [:show, :edit, :update, :destroy]
+
+  def index
+    @$1s = ${1:$(s-upper-camel-case yas-text)}.all
+  end
+
+  def show
+  end
+
+  def new
+    @$1 = $1.new
+  end
+
+  def edit
+  end
+
+  def create
+    @$1 = ${1:$(s-upper-camel-case yas-text)}.new(params[:$1])
+    if @$1.save
+      redirect_to $1_path($1_id: @$1.id), notice: '$1 was successfully created.'
+    else
+      render action: 'new'
+    end
+  end
+
+  def update
+    if @$1.update_attributes(params[:$1])
+      redirect_to $1_path($1_id: @$1.id), notice: '$1 was successfully updated.'
+    else
+      render action: 'edit'
+    end
+  end
+
+  def destroy
+    if @$1.destroy
+      redirect_to $1_path($1_id: @$1.id)
+    end
+  end
+
+  protected
+
+  def find_record
+    @$1 = ${1:$(s-upper-camel-case yas-text)}.find(params[:id])
+  end
+end

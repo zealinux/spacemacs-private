@@ -1,0 +1,33 @@
+# -*- mode: snippet -*-
+#name : index
+#key : index
+#contributor : Wang King
+# --
+<%= content_for :title, '$1' %>
+
+<div role="tabpanel">
+  <!-- Nav tabs -->
+  <!-- Search bar -->
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <h2></h2>
+    <h3></h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @$2.each do |$3| %>
+          <tr>
+            <td><%= $3.id %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <!-- Pagination -->
+  </div>
+  <!-- Back link -->
+</div>

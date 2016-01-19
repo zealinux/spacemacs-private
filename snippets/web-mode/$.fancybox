@@ -1,0 +1,11 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: $.fancybox
+# group: jquery
+# key: $.fancybox
+# binding: direct-keybinding
+# --
+$.fancybox($('$1'), {
+  afterClose: function() {
+    $2
+  }
+});

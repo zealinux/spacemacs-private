@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: content_for title
+# key: content_for_title
+# group: momo
+# binding: direct-keybinding
+# --
+<%= content_for :title, '$1' %>
+$0

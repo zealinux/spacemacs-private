@@ -1,0 +1,7 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: link_to blank
+# group: rails
+# key: link_to_b
+# binding: direct-keybinding
+# --
+link_to '$1', $2, target: '_blank'
