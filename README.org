@@ -1,0 +1,12 @@
+* Mike King 的 Emacs 配置 2016
+
+** 使用方法
+
+#+BEGIN_SRC sh
+# clone spacemacs repo and use develop branch
+git clone https://github.com/syl20bnr/spacemacs.git ~/.emacs.d
+cd .emacs.d && git checkout --track origin/develop
+
+# clone spacemacs-private
+git clone git@github.com:zealinux/spacemacs-private.git ~/.spacemacs.d/
+#+END_SRC
