@@ -29,16 +29,20 @@ values."
      common-lisp
      ;; ruby
      ruby-on-rails
+     html
      javascript
      go
      yaml
      git
      ;; github
-     ;; version-control
+     (version-control :variables
+                      version-control-global-margin t)
      ;; markdown
+     dash
      org
      shell
-     spell-checking
+     (spell-checking :variables
+                     spell-checking-enable-by-default nil)
      syntax-checking
      gtags
      auto-completion
@@ -59,6 +63,9 @@ values."
      (spacemacs-layouts :variables
                         layouts-enable-autosave t
                         layouts-autosave-delay 300)
+     command-log
+     speed-reading
+     restclient
      ;; erc
      ;; emoji
      wqn-code
@@ -276,6 +283,10 @@ in `dotspacemacs/user-config'."
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
 
+  ;; for email
+  (setq user-full-name "Mike King"
+        user-mail-address "zealinux@gmail.com")
+
   ;; 解决org表格里面中英文对齐的问题
   (when (configuration-layer/layer-usedp 'chinese)
     (when (spacemacs/system-is-mac)
@@ -308,7 +319,20 @@ layers configuration. You are free to put any user code."
    web-mode-code-indent-offset 2
    web-mode-attr-indent-offset 2)
 
+  ;; version-control (GitGultter) minor-mode icon
+  (setq git-gutter+-lighter "☯")
+
   (setq inferior-lisp-program "/usr/local/bin/sbcl")
+  ;; yas-expand-snippet error
+  ;; (setq projectile-rails-expand-snippet nil)
+  ;; Yasnippet
+  (yas-global-mode 1)
+
+  ;; Projectile
+  (projectile-global-mode)
+  (add-hook 'projectile-mode-hook 'projectile-rails-on)
+
+  (setq deft-directory "~/Dropbox/GitHub/blog/content")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -318,6 +342,7 @@ layers configuration. You are free to put any user code."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(auto-revert-check-vc-info t)
  '(custom-safe-themes
    (quote
     ("38ba6a938d67a452aeb1dada9d7cdeca4d9f18114e9fc8ed2b972573138d4664" default)))
