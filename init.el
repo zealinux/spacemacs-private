@@ -27,14 +27,14 @@ values."
      ;; spacemacs-ivy
      emacs-lisp
      common-lisp
-     ;; ruby
+     ruby
      ruby-on-rails
      html
      javascript
      go
      yaml
      git
-     ;; github
+     github
      (version-control :variables
                       version-control-global-margin t)
      ;; markdown
@@ -45,7 +45,14 @@ values."
                      spell-checking-enable-by-default nil)
      syntax-checking
      gtags
-     auto-completion
+     (auto-completion :variables
+                      auto-completion-return-key-behavior 'complete
+                      auto-completion-tab-key-behavior 'cycle
+                      auto-completion-complete-with-key-sequence nil
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-enable-help-tooltip t
+                      auto-completion-enable-sort-by-usage t
+                      auto-completion-private-snippets-directory "~/.spacemacs.d/snippets/")
      ;; semantic                           ; too slow
      (vinegar :variables vinegar-reuse-dired-buffer t)
      eyebrowse
@@ -59,7 +66,7 @@ values."
      osx
      themes-megapack
      (colors :variables
-             colors-enable-nyan-cat-progress-bar t)
+             colors-enable-nyan-cat-progress-bar (display-graphic-p))
      (spacemacs-layouts :variables
                         layouts-enable-autosave t
                         layouts-autosave-delay 300)
@@ -287,12 +294,19 @@ layers configuration. You are free to put any user code."
   (setq user-full-name "Mike King"
         user-mail-address "zealinux@gmail.com")
 
+  ;; *scratch* buffer
+  (setq initial-scratch-message nil)
+  ;; (setq initial-major-mode 'ruby-mode)
+
+  ;; copy and mark then direct paste
+  (delete-selection-mode t)
+
   ;; 解决org表格里面中英文对齐的问题
   (when (configuration-layer/layer-usedp 'chinese)
     (when (spacemacs/system-is-mac)
       (spacemacs//set-monospaced-font "Source Code Pro" "Hiragino Sans GB" 14 16)))
 
-  (global-company-mode t)
+  ;; (global-company-mode t)
   (setq-default powerline-default-separator 'arrow)
 
   (add-hook 'prog-mode-hook
@@ -308,6 +322,8 @@ layers configuration. You are free to put any user code."
              (hl-line-mode -1))))
 
   (add-hook 'find-file-hook 'spacemacs/check-large-file)
+
+  (global-flycheck-mode)
 
   (setq-default
    ;; js2-mode
@@ -326,7 +342,8 @@ layers configuration. You are free to put any user code."
   ;; yas-expand-snippet error
   ;; (setq projectile-rails-expand-snippet nil)
   ;; Yasnippet
-  (yas-global-mode 1)
+  ;; (yas-global-mode 1)
+  (spacemacs/helm-gtags-define-keys-for-mode 'ruby-mode)
 
   ;; Projectile
   (projectile-global-mode)
